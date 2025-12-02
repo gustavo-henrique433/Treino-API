@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .             # "Construa a imagem usando o Dockerfile desta pasta"
+    ports:
+      - "5000:5000"      # "Ligue a porta 5000 do PC na 5000 do container"
+    volumes:
+      - ./instance:/app/instance  # "Salve o arquivo .db na minha pasta instance local"
+    environment:
+      - FLASK_ENV=development
